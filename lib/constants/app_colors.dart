@@ -16,6 +16,7 @@ class AppColors {
   static Color charocalIndigo = Color(0xff1F1D47);
   static Color electricPurple = Color(0xffC427FB);
   static Color lavenderMist = Color(0xffE0D9FF);
+
   static Gradient gradienOne = LinearGradient(colors: [
     Color(0xff2E335A),
     Color(0xff1C1B33),
@@ -25,8 +26,9 @@ class AppColors {
     Color(0xff362A84),
   ]);
   static Gradient gradienThree = LinearGradient(colors: [
-    Color(0xff3658B1),
+    Color(0xff1F1D47),
     Color(0xffC159EC),
+    Color(0xff1F1D47),
   ]);
   static Gradient gradienFour = LinearGradient(colors: [
     Color(0xffAEC9FF),
