@@ -76,7 +76,11 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
               ],
             ),
           ),
-          BottomSheetWidget(sheetController: _sheetController, childeren: []),
+          BottomSheetWidget(
+            sheetController: _sheetController,
+            hourlyPreview: [HourlyPreview()],
+            weeklyPreview: [Text('hello heheheh')],
+          ),
           BottomNavigationBarWidget(
             onLocationTap: () {
               print('on list tap');
@@ -102,5 +106,16 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   void dispose() {
     _sheetController.dispose();
     super.dispose();
+  }
+}
+
+class HourlyPreview extends StatelessWidget {
+  const HourlyPreview({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [Text('hello')],
+    );
   }
 }
