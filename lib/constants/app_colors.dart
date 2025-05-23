@@ -5,7 +5,6 @@ class AppColors {
   static Color lightSecondary = Color(0xff3C3C43);
   static Color lightTeritiary = Color(0xff3C3C43);
   static Color lightQuantiary = Color(0xff3C3C43);
-
   static Color darkPrimary = Color(0xffFFFFFF);
   static Color darkSecondary = Color(0xffEBEBF5);
   static Color darkTeritiary = Color(0xffEBEBF5);
@@ -16,6 +15,10 @@ class AppColors {
   static Color charocalIndigo = Color(0xff1F1D47);
   static Color electricPurple = Color(0xffC427FB);
   static Color lavenderMist = Color(0xffE0D9FF);
+  static Color grey = Colors.grey;
+
+  //static Color
+  static Color rebeccaPurple = Color(0xff533e8b);
 
   static Gradient gradienOne = LinearGradient(colors: [
     Color(0xff2E335A),

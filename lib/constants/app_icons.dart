@@ -1,4 +1,8 @@
+import 'package:flutter/material.dart';
+
 class AppIcons {
+  static const IconData back = Icons.arrow_back_ios;
+  static const IconData more = Icons.more_horiz_sharp;
   static const String buttonCover = 'assets/icons/buttoncover.svg';
   static const String list = 'assets/icons/List.svg';
   static const String location = 'assets/icons/location.svg';
