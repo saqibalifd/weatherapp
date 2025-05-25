@@ -3,7 +3,7 @@ import 'package:weatherapp/constants/app_colors.dart';
 import 'package:weatherapp/constants/app_fonts.dart';
 import 'package:weatherapp/extension/gradient_underline_tab_indicator.dart';
 import 'package:weatherapp/extension/mediaquery_extension.dart';
-import 'package:weatherapp/widgets/glassmorphism_widget.dart';
+import 'package:weatherapp/presentation/home/widgets/glassmorphism_widget.dart';
 
 class BottomSheetWidget extends StatefulWidget {
   final DraggableScrollableController sheetController;

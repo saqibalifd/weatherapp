@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:weatherapp/animations/floating_animation.dart';
 import 'package:weatherapp/extension/mediaquery_extension.dart';
 
-import '../../constants/app_colors.dart';
-import '../../constants/app_fonts.dart';
-import '../../constants/app_images.dart';
+import '../../../constants/app_colors.dart';
+import '../../../constants/app_fonts.dart';
+import '../../../constants/app_images.dart';
 
 class CitiesWeatherCard extends StatelessWidget {
   final String title;
@@ -28,13 +29,16 @@ class CitiesWeatherCard extends StatelessWidget {
           Center(
             child: Image.asset(AppImages.weatherWidget),
           ),
-          Positioned(
-              right: context.screenWidth * .1,
-              top: context.screenHeight * .02,
+          Padding(
+            padding: EdgeInsets.only(left: context.screenWidth * .55),
+            child: FloatingAnimation(
               child: Image.asset(
                 icon,
-                height: context.screenHeight * .12,
-              )),
+                height: context.screenHeight * .13,
+                width: context.screenWidth * .3,
+              ),
+            ),
+          ),
           Positioned(
             top: context.screenHeight * .04,
             left: context.screenWidth * .06,

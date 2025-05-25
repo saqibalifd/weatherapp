@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:weatherapp/constants/app_icons.dart';
-import 'package:weatherapp/constants/app_images.dart';
-import 'package:weatherapp/widgets/cards/cities_weather_card.dart';
+import 'package:weatherapp/presentation/cities/widgets/cities_weather_card.dart';
 
-import '../constants/app_colors.dart';
-import '../constants/app_fonts.dart';
+import '../../../constants/app_colors.dart';
+import '../../../constants/app_fonts.dart';
 
 class CitiesWeatherScreen extends StatelessWidget {
   const CitiesWeatherScreen({super.key});
@@ -17,21 +16,21 @@ class CitiesWeatherScreen extends StatelessWidget {
         'subtitle': 'H 24 L:18',
         'location': 'Tronto,Canada',
         'condition': 'Showers',
-        'icon': AppImages.housePic,
+        'icon': AppIcons.moonCloudMidRain,
       },
       {
         'title': '19°',
         'subtitle': 'H 24 L:18',
         'location': 'Tronto,Canada',
         'condition': 'Showers',
-        'icon': AppImages.housePic,
+        'icon': AppIcons.sunCloudAngleRain,
       },
       {
         'title': '19°',
         'subtitle': 'H 24 L:18',
         'location': 'Tronto,Canada',
         'condition': 'Showers',
-        'icon': AppImages.housePic,
+        'icon': AppIcons.trondoBig,
       },
     ];
     return Scaffold(

@@ -1,28 +1,29 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
+import 'package:weatherapp/constants/app_icons.dart';
 import 'package:weatherapp/extension/mediaquery_extension.dart';
 
-import '../../constants/app_colors.dart';
-import '../../constants/app_fonts.dart';
+import '../../../constants/app_colors.dart';
+import '../../../constants/app_fonts.dart';
 
 class HourlyCard extends StatelessWidget {
   final String time;
-  final String svgIconPath;
-  final String temprature;
-  final Color? color;
+  final int temprature;
+  final int rainChances;
+  final bool isNow;
+
   const HourlyCard({
     super.key,
     required this.time,
-    required this.svgIconPath,
     required this.temprature,
-    this.color,
+    required this.rainChances,
+    required this.isNow,
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: color ?? AppColors.rebeccaPurple,
+        color: isNow ? AppColors.purpleNavy : AppColors.rebeccaPurple,
         borderRadius: BorderRadius.circular(50),
         boxShadow: [
           BoxShadow(
@@ -56,9 +57,36 @@ class HourlyCard extends StatelessWidget {
             Padding(
                 padding:
                     EdgeInsets.symmetric(vertical: context.screenHeight * .01),
-                child: SvgPicture.asset(svgIconPath)),
+                child: Stack(
+                  children: [
+                    Image.asset(
+                      rainChances >= 100
+                          ? AppIcons.moonCloudMidRainWindSmall
+                          : rainChances <= 50
+                              ? AppIcons.sunCloudMidRainSmall
+                              : rainChances <= 20
+                                  ? AppIcons.moonCloudFastWingSmall
+                                  : AppIcons.moonCloudMidRainWindSmall,
+                      height: context.screenHeight * .09,
+                      width: context.screenWidth * .09,
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(
+                          top: context.screenHeight * .065,
+                          left: context.screenWidth * .01),
+                      child: Text(
+                        '$rainChances%'.toString(),
+                        style: TextStyle(
+                            fontSize: 12,
+                            fontFamily: AppFonts.sfProDisplay,
+                            fontWeight: AppFonts.regular,
+                            color: AppColors.skyBlue),
+                      ),
+                    )
+                  ],
+                )),
             Text(
-              temprature,
+              '$temprature°'.toString(),
               style: TextStyle(
                   fontSize: 16,
                   fontFamily: AppFonts.sfProDisplay,

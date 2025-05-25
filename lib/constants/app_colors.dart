@@ -16,6 +16,7 @@ class AppColors {
   static Color electricPurple = Color(0xffC427FB);
   static Color lavenderMist = Color(0xffE0D9FF);
   static Color grey = Colors.grey;
+  static Color skyBlue = Color(0xff40CBD8);
 
   //static Color
   static Color rebeccaPurple = Color(0xff533e8b);

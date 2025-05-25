@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:weatherapp/widgets/glassmorphism_widget.dart';
+import 'package:weatherapp/presentation/home/widgets/glassmorphism_widget.dart';
 
 class TestScreen extends StatefulWidget {
   const TestScreen({super.key});

@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:weatherapp/constants/app_colors.dart';
 import 'package:weatherapp/constants/app_fonts.dart';
-import 'package:weatherapp/constants/app_icons.dart';
 import 'package:weatherapp/constants/app_images.dart';
-import 'package:weatherapp/extension/mediaquery_extension.dart';
-import 'package:weatherapp/view/cities_weather_screen.dart';
-import 'package:weatherapp/widgets/bottom_navigation_bar.dart';
-import 'package:weatherapp/widgets/bottom_sheet_widget.dart';
-import 'package:weatherapp/widgets/cards/hourly_card.dart';
+import 'package:weatherapp/data/dummy_data_services.dart';
+import 'package:weatherapp/presentation/cities/view/cities_weather_screen.dart';
+import 'package:weatherapp/presentation/home/preview/weekly_preview.dart';
+import 'package:weatherapp/presentation/home/widgets/bottom_navigation_bar.dart';
+import 'package:weatherapp/presentation/home/widgets/bottom_sheet_widget.dart';
+
+import '../preview/hourly_preview.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -19,6 +20,8 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   final DraggableScrollableController _sheetController =
       DraggableScrollableController();
+
+  final DummyDataServices dummyDataServices = DummyDataServices();
 
   @override
   Widget build(BuildContext context) {
@@ -37,8 +40,18 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
           //bottom sheet
           BottomSheetWidget(
             sheetController: _sheetController,
-            hourlyPreview: [HourlyPreview()],
-            weeklyPreview: [WeeklyPreview()],
+            hourlyPreview: [
+              HourlyPreview(
+                hourlyData: dummyDataServices.hourlyData,
+                weatherData: dummyDataServices.weatherData,
+              )
+            ],
+            weeklyPreview: [
+              WeeklyPreview(
+                hourlyData: dummyDataServices.hourlyData,
+                weatherData: dummyDataServices.weatherData,
+              )
+            ],
           ),
 
           // bottom navigation bar
@@ -110,52 +123,4 @@ Widget headingText() {
       Image.asset(AppImages.housePic),
     ],
   );
-}
-
-class HourlyPreview extends StatelessWidget {
-  const HourlyPreview({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        HourlyCard(
-            time: '12 PM', svgIconPath: AppIcons.location, temprature: '19°'),
-        // Row(
-        //   spacing: 10,
-        //   children: [
-        //     SizedBox(
-        //       width: 10,
-        //     ),
-        //     HourlyCard(
-        //         time: '12 PM',
-        //         svgIconPath: AppIcons.location,
-        //         temprature: '19°'),
-        //     HourlyCard(
-        //         time: '12 PM',
-        //         svgIconPath: AppIcons.location,
-        //         color: AppColors.purpleNavy,
-        //         temprature: '19°'),
-        //     HourlyCard(
-        //         time: '12 PM',
-        //         svgIconPath: AppIcons.location,
-        //         temprature: '19°'),
-        //     HourlyCard(
-        //         time: '12 PM',
-        //         svgIconPath: AppIcons.location,
-        //         temprature: '19°'),
-        //   ],
-        // )
-      ],
-    );
-  }
-}
-
-class WeeklyPreview extends StatelessWidget {
-  const WeeklyPreview({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Placeholder();
-  }
 }
