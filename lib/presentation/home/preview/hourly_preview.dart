@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:weatherapp/constants/app_icons.dart';
 import 'package:weatherapp/extension/mediaquery_extension.dart';
 import 'package:weatherapp/presentation/home/widgets/hourly_card.dart';
 
@@ -72,7 +73,7 @@ class HourlyPreview extends StatelessWidget {
                 ),
                 //rainfall
                 CommonCard(
-                  iconPath: Icons.home,
+                  iconPath: AppIcons.rain,
                   name: 'RAINFALL',
                   title: '${weatherData.first['LHRainFallInMM']} mm',
                   body: 'in last hour',
@@ -81,21 +82,21 @@ class HourlyPreview extends StatelessWidget {
                 ),
                 //feels like
                 CommonCard(
-                  iconPath: Icons.home,
+                  iconPath: AppIcons.temprature,
                   name: 'FEELS LIKE',
                   title: '${weatherData.first['feelsLike']}°',
                   subtitle: 'Similar to the actual temprature.',
                 ),
                 //humidity
                 CommonCard(
-                  iconPath: Icons.home,
+                  iconPath: AppIcons.humidity,
                   name: 'HUMIDITY',
                   title: '${weatherData.first['humidity']}%',
                   subtitle: 'The diw point is 17 right now.',
                 ),
                 //visibility
                 CommonCard(
-                  iconPath: Icons.home,
+                  iconPath: AppIcons.visibility,
                   name: 'VISIBILITY',
                   title: '${weatherData.first['visibility']}km',
                   subtitle: 'Similar to the actual temprature.',

@@ -40,7 +40,7 @@ class CitiesWeatherScreen extends StatelessWidget {
           SizedBox(
             height: 40,
           ),
-          _appBar(),
+          _appBar(context),
           Expanded(
             child: ListView.builder(
               itemCount: dummyCitiesData.length,
@@ -63,7 +63,7 @@ class CitiesWeatherScreen extends StatelessWidget {
 }
 //app  bar
 
-Widget _appBar() {
+Widget _appBar(BuildContext context) {
   return Padding(
     padding: const EdgeInsets.symmetric(horizontal: 20),
     child: Row(
@@ -71,9 +71,14 @@ Widget _appBar() {
       children: [
         Row(
           children: [
-            Icon(
-              AppIcons.back,
-              color: AppColors.background,
+            IconButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              icon: Icon(
+                AppIcons.back,
+                color: AppColors.background,
+              ),
             ),
             Text(
               'Weather',

@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:weatherapp/constants/app_fonts.dart';
 import 'package:weatherapp/extension/mediaquery_extension.dart';
 
 import '../../../constants/app_colors.dart';
 
 class CommonCard extends StatelessWidget {
-  final IconData iconPath;
+  final String iconPath;
   final String name;
   final String title;
   final String? body;
@@ -39,17 +40,23 @@ class CommonCard extends StatelessWidget {
           children: [
             Row(
               children: [
-                Icon(
+                SvgPicture.asset(
                   iconPath,
-                  color: AppColors.grey,
+                  colorFilter:
+                      ColorFilter.mode(AppColors.grey, BlendMode.srcIn),
+                  height: context.screenHeight * .02,
+                  width: context.screenWidth * .02,
                 ),
-                Text(
-                  name,
-                  style: TextStyle(
-                    fontSize: 14,
-                    fontFamily: AppFonts.sfProDisplay,
-                    fontWeight: AppFonts.regular,
-                    color: AppColors.grey,
+                Padding(
+                  padding: const EdgeInsets.only(left: 4),
+                  child: Text(
+                    name,
+                    style: TextStyle(
+                      fontSize: 14,
+                      fontFamily: AppFonts.sfProDisplay,
+                      fontWeight: AppFonts.regular,
+                      color: AppColors.grey,
+                    ),
                   ),
                 ),
               ],

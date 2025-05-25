@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:weatherapp/constants/app_colors.dart';
+import 'package:weatherapp/constants/app_icons.dart';
 import 'package:weatherapp/extension/mediaquery_extension.dart';
 
 import '../../../constants/app_fonts.dart';
@@ -29,17 +31,22 @@ class AirQualityCard extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Icon(
-                Icons.home,
-                color: AppColors.grey,
+              SvgPicture.asset(
+                AppIcons.airQuality,
+                colorFilter: ColorFilter.mode(AppColors.grey, BlendMode.srcIn),
+                height: context.screenHeight * .025,
+                width: context.screenWidth * .025,
               ),
-              Text(
-                'AIR QUALITY',
-                style: TextStyle(
-                  fontSize: 14,
-                  fontFamily: AppFonts.sfProDisplay,
-                  fontWeight: AppFonts.regular,
-                  color: AppColors.grey,
+              Padding(
+                padding: const EdgeInsets.only(left: 4),
+                child: Text(
+                  'AIR QUALITY',
+                  style: TextStyle(
+                    fontSize: 14,
+                    fontFamily: AppFonts.sfProDisplay,
+                    fontWeight: AppFonts.regular,
+                    color: AppColors.grey,
+                  ),
                 ),
               ),
             ],

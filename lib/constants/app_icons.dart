@@ -32,6 +32,17 @@ class AppIcons {
   static const String location = 'assets/icons/location.svg';
   static const String map = 'assets/icons/Map.svg';
   static const String manu = 'assets/icons/Menu.svg';
-
   static const String plus = 'assets/icons/Plus.svg';
+
+  static const String airQuality = 'assets/icons/airQuality.svg';
+  static const String pressure = 'assets/icons/pressure.svg';
+  static const String rain = 'assets/icons/rain.svg';
+
+  static const String sunrise = 'assets/icons/sunrise.svg';
+
+  static const String temprature = 'assets/icons/temprature.svg';
+  static const String uvindex = 'assets/icons/uvindex.svg';
+  static const String visibility = 'assets/icons/visibility.svg';
+  static const String wind = 'assets/icons/wind.svg';
+  static const String humidity = 'assets/icons/humidity.svg';
 }

@@ -62,14 +62,9 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                   MaterialPageRoute(
                     builder: (context) => CitiesWeatherScreen(),
                   ));
-              print('on list tap');
             },
-            onPlusTap: () {
-              print('on plus tap');
-            },
-            onListTap: () {
-              print('on location tap');
-            },
+            onPlusTap: () {},
+            onListTap: () {},
           )
         ],
       ),

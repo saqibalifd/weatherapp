@@ -22,7 +22,7 @@ class DummyDataServices {
     },
     {
       'time': '12 PM',
-      'rainChances': 700,
+      'rainChances': 80,
       'temprature': 17,
       'isNow': true,
     },
