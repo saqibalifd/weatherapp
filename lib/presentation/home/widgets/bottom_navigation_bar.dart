@@ -22,7 +22,7 @@ class BottomNavigationBarWidget extends StatelessWidget {
         bottom: 0,
         child: Stack(
           children: [
-            Image.asset(AppImages.bottomNavBarBackground),
+            // Image.asset(AppImages.bottomNavBarBackground),
             SizedBox(
               width: context.screenWidth * 1,
               child: Padding(
@@ -37,19 +37,19 @@ class BottomNavigationBarWidget extends StatelessWidget {
                     GestureDetector(
                         onTap: onLocationTap,
                         child: SvgPicture.asset(AppIcons.location)),
-                    Padding(
-                      padding: EdgeInsets.only(left: context.screenWidth * .1),
-                      child: GestureDetector(
-                        onTap: onPlusTap,
-                        child: CircleAvatar(
-                            backgroundColor: AppColors.background,
-                            radius: 30,
-                            child: SvgPicture.asset(
-                              AppIcons.plus,
-                              color: AppColors.charocalIndigo,
-                            )),
-                      ),
-                    ),
+                    // Padding(
+                    //   padding: EdgeInsets.only(left: context.screenWidth * .1),
+                    //   child: GestureDetector(
+                    //     onTap: onPlusTap,
+                    //     child: CircleAvatar(
+                    //         backgroundColor: AppColors.background,
+                    //         radius: 30,
+                    //         child: SvgPicture.asset(
+                    //           AppIcons.plus,
+                    //           color: AppColors.charocalIndigo,
+                    //         )),
+                    //   ),
+                    // ),
                     GestureDetector(
                         onTap: onListTap,
                         child: SvgPicture.asset(AppIcons.list)),

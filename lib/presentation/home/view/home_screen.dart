@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:weatherapp/constants/app_colors.dart';
 import 'package:weatherapp/constants/app_fonts.dart';
+import 'package:weatherapp/constants/app_icons.dart';
 import 'package:weatherapp/constants/app_images.dart';
 import 'package:weatherapp/data/dummy_data_services.dart';
 import 'package:weatherapp/presentation/cities/view/cities_weather_screen.dart';
@@ -53,20 +55,17 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
               )
             ],
           ),
-
-          // bottom navigation bar
-          BottomNavigationBarWidget(
-            onLocationTap: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => CitiesWeatherScreen(),
-                  ));
-            },
-            onPlusTap: () {},
-            onListTap: () {},
-          )
         ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: AppColors.charocalIndigo,
+        elevation: .4,
+        onPressed: () {},
+        shape: CircleBorder(side: BorderSide(color: AppColors.electricPurple)),
+        child: SvgPicture.asset(
+          AppIcons.location,
+          color: AppColors.background,
+        ),
       ),
     );
   }
