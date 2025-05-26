@@ -34,6 +34,12 @@ class AppColors {
     Color(0xffC159EC),
     Color(0xff1F1D47),
   ]);
+
+  static List gradientLinearProgress = [
+    Color(0xff083072),
+    Color(0xff48319D),
+    Color(0xffC159EC),
+  ];
   static Gradient gradienFour = LinearGradient(colors: [
     Color(0xffAEC9FF),
     Color(0xff083072),

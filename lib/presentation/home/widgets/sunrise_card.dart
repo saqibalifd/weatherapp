@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:weatherapp/constants/app_icons.dart';
+import 'package:weatherapp/extension/curved_progress_bar.dart';
 import 'package:weatherapp/extension/mediaquery_extension.dart';
 
 import '../../../constants/app_colors.dart';
 import '../../../constants/app_fonts.dart';
 
 class SunriseCard extends StatelessWidget {
-  const SunriseCard({super.key});
+  final double sinriseValue;
+  const SunriseCard({super.key, required this.sinriseValue});
 
   @override
   Widget build(BuildContext context) {
@@ -54,8 +56,12 @@ class SunriseCard extends StatelessWidget {
               color: AppColors.background,
             ),
           ),
-          Divider(
-            color: AppColors.electricPurple,
+          SizedBox(
+            height: context.screenHeight * .005,
+          ),
+          CurvedProgressBar(
+            value: sinriseValue,
+            size: context.screenHeight * .03,
           ),
           SizedBox(
             height: context.screenHeight * .023,

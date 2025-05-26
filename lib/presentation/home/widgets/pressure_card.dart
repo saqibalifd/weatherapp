@@ -1,3 +1,4 @@
+import 'package:circular_seek_bar/circular_seek_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:weatherapp/constants/app_fonts.dart';
@@ -7,7 +8,8 @@ import 'package:weatherapp/extension/mediaquery_extension.dart';
 import '../../../constants/app_colors.dart';
 
 class PressureCard extends StatelessWidget {
-  const PressureCard({super.key});
+  final double progress;
+  const PressureCard({super.key, required this.progress});
 
   @override
   Widget build(BuildContext context) {
@@ -45,6 +47,30 @@ class PressureCard extends StatelessWidget {
               ),
             ],
           ),
+          SizedBox(
+            height: context.screenHeight * .01,
+          ),
+          CircularSeekBar(
+            width: double.infinity,
+            height: context.screenHeight * .13,
+            progress: progress,
+            barWidth: 8,
+            startAngle: 45,
+            sweepAngle: 360,
+            strokeCap: StrokeCap.butt,
+            progressGradientColors: [
+              AppColors.grey,
+              AppColors.lightSecondary,
+              AppColors.lightQuantiary,
+              AppColors.lightTeritiary,
+              AppColors.lightQuantiary,
+              AppColors.lightSecondary,
+              AppColors.grey,
+            ],
+            dashWidth: 2,
+            dashGap: 6,
+            animation: true,
+          )
         ],
       ),
     );

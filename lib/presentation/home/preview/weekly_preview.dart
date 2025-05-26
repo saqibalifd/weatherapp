@@ -39,7 +39,9 @@ class WeeklyPreview extends StatelessWidget {
             },
           ),
         ),
-        AirQualityCard(),
+        AirQualityCard(
+          percentage: weatherData.first['airQuality'],
+        ),
         SizedBox(
           height: context.screenHeight * 1,
           child: Padding(
@@ -55,21 +57,26 @@ class WeeklyPreview extends StatelessWidget {
                   padding: EdgeInsets.symmetric(
                       horizontal: context.screenWidth * .02,
                       vertical: context.screenHeight * .01),
-                  child: UvIndexCard(),
+                  child: UvIndexCard(
+                    uvIndex: weatherData.first['uvIndex'],
+                  ),
                 ),
                 //sunrise
                 Padding(
                   padding: EdgeInsets.symmetric(
                       horizontal: context.screenWidth * .02,
                       vertical: context.screenHeight * .01),
-                  child: SunriseCard(),
+                  child: SunriseCard(
+                    sinriseValue: weatherData.first['sunriseValue'],
+                  ),
                 ),
                 //wind
                 Padding(
                   padding: EdgeInsets.symmetric(
                       horizontal: context.screenWidth * .02,
                       vertical: context.screenHeight * .01),
-                  child: WindCard(),
+                  child: WindCard(
+                      windSpeed: weatherData.first['windSpeed'].toString()),
                 ),
                 //rainfall
                 CommonCard(
@@ -106,7 +113,9 @@ class WeeklyPreview extends StatelessWidget {
                   padding: EdgeInsets.symmetric(
                       horizontal: context.screenWidth * .02,
                       vertical: context.screenHeight * .01),
-                  child: PressureCard(),
+                  child: PressureCard(
+                    progress: .9,
+                  ),
                 ),
               ],
             ),

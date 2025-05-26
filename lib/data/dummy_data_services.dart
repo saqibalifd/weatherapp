@@ -9,7 +9,12 @@ class DummyDataServices {
       'fullDayRainFallInMM': '1.2',
       'feelsLike': '19',
       'humidity': '90',
-      'visibility': '8'
+      'visibility': '8',
+      'airQuality': 0.3,
+      'uvIndex': 0.1,
+      'progress': .05,
+      'windSpeed': 9.7,
+      'sunriseValue': 0.4,
     }
   ];
 

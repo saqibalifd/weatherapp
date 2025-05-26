@@ -2,12 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:weatherapp/constants/app_colors.dart';
 import 'package:weatherapp/constants/app_icons.dart';
+import 'package:weatherapp/extension/cutom_linear_progress.dart';
 import 'package:weatherapp/extension/mediaquery_extension.dart';
 
 import '../../../constants/app_fonts.dart';
 
 class UvIndexCard extends StatelessWidget {
-  const UvIndexCard({super.key});
+  final double uvIndex;
+  const UvIndexCard({super.key, required this.uvIndex});
 
   @override
   Widget build(BuildContext context) {
@@ -69,9 +71,7 @@ class UvIndexCard extends StatelessWidget {
           SizedBox(
             height: context.screenHeight * .01,
           ),
-          Divider(
-            color: AppColors.electricPurple,
-          )
+          CutomLinearProgress(percentage: uvIndex)
         ],
       ),
     );

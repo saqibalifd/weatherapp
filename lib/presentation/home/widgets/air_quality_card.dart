@@ -2,12 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:weatherapp/constants/app_colors.dart';
 import 'package:weatherapp/constants/app_icons.dart';
+import 'package:weatherapp/extension/cutom_linear_progress.dart';
 import 'package:weatherapp/extension/mediaquery_extension.dart';
 
 import '../../../constants/app_fonts.dart';
 
 class AirQualityCard extends StatelessWidget {
-  const AirQualityCard({super.key});
+  final double percentage;
+  const AirQualityCard({super.key, required this.percentage});
 
   @override
   Widget build(BuildContext context) {
@@ -60,9 +62,10 @@ class AirQualityCard extends StatelessWidget {
               color: AppColors.background,
             ),
           ),
-          Divider(
-            color: AppColors.electricPurple,
-          ),
+          CutomLinearProgress(percentage: percentage),
+          // Divider(
+          //   color: AppColors.electricPurple,
+          // ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
